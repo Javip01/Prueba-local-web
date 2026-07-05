@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | El Rincón de Sanabria Madrid</title>
+    <meta name="description" content="Restaurante en Madrid especializado en tradición, producto de primera calidad y raciones caseras. Reserva tu mesa hoy.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="top-nav">
+        <div class="logo-container"><img src="images/logo.png" alt="Logotipo El Rincón de Sanabria"></div>
+        <nav class="nav-links">
+            <a href="index.html" class="active">Inicio</a>
+            <a href="menú especial/menu_especial.html">Menú<br>Especial</a>
+            <a href="desayunos/desayunos.html">Desayunos</a>
+            <a href="carta/carta.html">Carta</a>
+        </nav>
+    </header>
+
+    <!-- ================= CARRUSEL ================= -->
+    <section class="carousel-wrapper" aria-label="Galería de inicio">
+        <button class="carousel-btn carousel-prev" onclick="manualScrollPrev()" aria-label="Anterior">&#10094;</button>
+        <button class="carousel-btn carousel-next" onclick="manualScrollNext()" aria-label="Siguiente">&#10095;</button>
+
+        <div class="carousel-track" id="homeCarousel">
+            <article class="carousel-slide">
+                <img class="carousel-img" src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80" alt="Interior del restaurante">
+                <div class="carousel-text-container" style="pointer-events: auto;">
+                    <h1>Bienvenidos a El Rincón de Sanabria</h1>
+                    <p>Tradición, producto de primera calidad y vanguardia en el corazón de Madrid.</p>
+                    <a href="#contacto-info" class="btn-hero">Reservar Mesa</a>
+                </div>
+            </article>
+
+            <article class="carousel-slide">
+                <img class="carousel-img" src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=1200&q=80" alt="Plato de tarta de queso con frutos rojos">
+                <div class="carousel-text-container" style="pointer-events: auto;">
+                    <h2>Menú Especial de la Casa</h2>
+                    <p>Disfruta de nuestros mejores platos por 40€ con bebida y postre incluido.</p>
+                    <a href="carta/carta.html" class="btn-hero">Ver Carta</a>
+                </div>
+            </article>
+
+            <article class="carousel-slide">
+                <img class="carousel-img" src="https://images.unsplash.com/photo-1627308595171-d1b5d67129c4?auto=format&fit=crop&w=1200&q=80" alt="Ración de patatas bravas">
+                <div class="carousel-text-container">
+                    <h2>La Auténtica Hora del Tapeo</h2>
+                    <p>Acompaña tu caña con nuestras raciones y embutidos ibéricos recién cortados.</p>
+                </div>
+            </article>
+        </div>
+        
+        <div class="carousel-indicators" id="carouselIndicators"></div>
+    </section>
+    <!-- ================= FIN CARRUSEL ================= -->
+
+    <main class="container" id="contacto-info">
+        <section style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; text-align: left;">
+            <article class="card" style="padding: 20px; height: auto; min-height: auto;">
+                <h3>🕒 Horarios</h3>
+                <p><strong>Lunes a Jueves:</strong> 12:00 - 23:30</p>
+                <p><strong>Viernes y Sábado:</strong> 12:00 - 01:00</p>
+                <p><strong>Domingo:</strong> Cerrado</p>
+                <hr style="border-color: var(--surface-light); margin: 15px 0;">
+                <p><em>Horario de Cocina:</em> 13:00-16:00 y 20:00-23:00</p>
+            </article>
+
+            <article class="card" style="padding: 20px; height: auto; min-height: auto;">
+                <h3>📍 Contacto e Instalaciones</h3>
+                <p><strong>Dirección:</strong> Calle Sillería 5, 28037 Madrid</p>
+                <p><strong>Teléfono:</strong> 91 775 90 90</p>
+                <p class="mt-2">Contamos con salón comedor elegante, amplia zona de barra para tapeo tradicional y terraza exterior.</p>
+            </article>
+        </section>
+    </main>
+
+    <!-- ================= SECCIÓN: SERVICIOS ================= -->
+    <section class="services-section">
+        <h2 class="text-center category-title" style="border:none; margin-bottom:0;">Nuestros servicios</h2>
+        <div class="services-grid">
+            <article class="service-item"><i class="fa-solid fa-wheelchair" aria-hidden="true"></i><span>Adaptado para movilidad reducida</span></article>
+            <article class="service-item"><i class="fa-solid fa-snowflake" aria-hidden="true"></i><span>Aire acondicionado</span></article>
+            <article class="service-item"><i class="fa-solid fa-umbrella-beach" aria-hidden="true"></i><span>Terraza</span></article>
+            <article class="service-item"><i class="fa-solid fa-champagne-glasses" aria-hidden="true"></i><span>Eventos privados</span></article>
+            <article class="service-item"><i class="fa-solid fa-smoking" aria-hidden="true"></i><span>Zona de fumadores</span></article>
+            <article class="service-item"><i class="fa-solid fa-bag-shopping" aria-hidden="true"></i><span>Para llevar</span></article>
+            <article class="service-item"><i class="fa-solid fa-fire-burner" aria-hidden="true"></i><span>Terraza climatizada</span></article>
+            <article class="service-item"><i class="fa-solid fa-ring" aria-hidden="true"></i><span>Banquetes de boda</span></article>
+            <article class="service-item"><i class="fa-solid fa-paw" aria-hidden="true"></i><span>Se permiten mascotas</span></article>
+            <article class="service-item"><i class="fa-solid fa-martini-glass-citrus" aria-hidden="true"></i><span>Bar en terraza</span></article>
+        </div>
+    </section>
+
+    <!-- ================= SECCIÓN: OPCIONES DE PAGO ================= -->
+    <section class="payments-section">
+        <h2>Opciones de pago</h2>
+        <div class="payments-grid">
+            <article class="payment-item"><i class="fa-brands fa-cc-amex" aria-hidden="true"></i><span>American Express</span></article>
+            <article class="payment-item"><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i><span>En efectivo</span></article>
+            <article class="payment-item"><i class="fa-brands fa-cc-mastercard" aria-hidden="true"></i><span>Mastercard</span></article>
+            <article class="payment-item"><i class="fa-brands fa-cc-visa" aria-hidden="true"></i><span>VISA</span></article>
+            <article class="payment-item"><i class="fa-regular fa-credit-card" aria-hidden="true"></i><span>Tarjeta de débito</span></article>
+            <article class="payment-item"><i class="fa-regular fa-credit-card" aria-hidden="true"></i><span>Maestro</span></article>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <address class="footer-contact" style="font-style: normal;">
+                <div class="contact-row">
+                    <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                    <a href="tel:+34917759090">+34917759090</a>
+                </div>
+                <div class="contact-row">
+                    <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+                    <a href="mailto:perlassanabria@gmail.com">perlassanabria@gmail.com</a>
+                </div>
+                <div class="contact-row">
+                    <i class="fa-solid fa-house" aria-hidden="true"></i>
+                    <span>C. Sillería, 5<br>28037 Madrid<br>España</span>
+                </div>
+                <a href="https://maps.google.com/?q=C.+Silleria,+5,+28037+Madrid" target="_blank" rel="noopener noreferrer" class="btn-mapa">MOSTRAR MAPA</a>
+            </address>
+
+            <div class="footer-message">
+                <h3>Envíenos su mensaje</h3>
+                <a href="mailto:perlassanabria@gmail.com" class="btn-mapa">CONTACTE CON NOSOTROS</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>Diseñado por DISH Digital Solutions GmbH. Todos los derechos reservados.</span>
+            <nav class="footer-links" aria-label="Enlaces legales">
+                <a href="#">Aviso legal</a>
+                <a href="#">Configuración de cookies</a>
+                <a href="#">Política de privacidad</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- BOTONES FLOTANTES -->
+    <button id="scrollActionBtn" class="scroll-action-btn" aria-label="Volver arriba">
+        <div class="scroll-arrow"></div>
+    </button>
+
+    <!-- SCRIPT AVANZADO: CARROUSEL Y SCROLL BTN -->
+    <script>
+        const track = document.getElementById('homeCarousel');
+        const indicatorsContainer = document.getElementById('carouselIndicators');
+        let slides = Array.from(document.querySelectorAll('.carousel-slide'));
+        const realSlidesCount = slides.length;
+
+        slides.forEach((_, i) => {
+            const dot = document.createElement('div');
+            dot.classList.add('indicator-dot');
+            if (i === 0) dot.classList.add('active');
+            dot.onclick = () => manualGoToSlide(i + 1); 
+            indicatorsContainer.appendChild(dot);
+        });
+        const dots = document.querySelectorAll('.indicator-dot');
+
+        const firstClone = slides[0].cloneNode(true);
+        const lastClone = slides[realSlidesCount - 1].cloneNode(true);
+        track.appendChild(firstClone);
+        track.insertBefore(lastClone, slides[0]);
+        slides = Array.from(document.querySelectorAll('.carousel-slide')); 
+        
+        setTimeout(() => { track.scrollLeft = track.clientWidth; }, 50);
+
+        track.addEventListener('scroll', () => {
+            const width = track.clientWidth;
+            if (width === 0) return;
+            const scrollPos = track.scrollLeft;
+            const index = Math.round(scrollPos / width);
+            
+            let dotIndex = index - 1;
+            if (dotIndex < 0) dotIndex = realSlidesCount - 1;
+            if (dotIndex >= realSlidesCount) dotIndex = 0;
+            
+            dots.forEach((dot, i) => dot.classList.toggle('active', i === dotIndex));
+
+            if (scrollPos === 0) {
+                track.style.scrollBehavior = 'auto'; 
+                track.scrollLeft = width * realSlidesCount;
+            } else if (scrollPos >= width * (slides.length - 1) - 5) {
+                track.style.scrollBehavior = 'auto';
+                track.scrollLeft = width;
+            } else {
+                track.style.scrollBehavior = 'smooth'; 
+            }
+        });
+
+        let autoPlayTimer;
+        function startAutoPlay() {
+            autoPlayTimer = setInterval(() => {
+                track.style.scrollBehavior = 'smooth';
+                track.scrollLeft += track.clientWidth;
+            }, 5000);
+        }
+        function resetAutoPlay() {
+            clearInterval(autoPlayTimer);
+            startAutoPlay();
+        }
+
+        startAutoPlay();
+        track.addEventListener('touchstart', resetAutoPlay, {passive: true});
+
+        window.manualScrollPrev = function() {
+            resetAutoPlay();
+            track.style.scrollBehavior = 'smooth';
+            track.scrollLeft -= track.clientWidth;
+        }
+        window.manualScrollNext = function() {
+            resetAutoPlay();
+            track.style.scrollBehavior = 'smooth';
+            track.scrollLeft += track.clientWidth;
+        }
+        window.manualGoToSlide = function(index) {
+            resetAutoPlay();
+            track.style.scrollBehavior = 'smooth';
+            track.scrollLeft = index * track.clientWidth;
+        }
+
+        const scrollBtn = document.getElementById('scrollActionBtn');
+        window.addEventListener('scroll', () => {
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
+                scrollBtn.classList.add('flipped'); 
+            } else {
+                scrollBtn.classList.remove('flipped'); 
+            }
+        });
+        scrollBtn.addEventListener('click', () => {
+            if (scrollBtn.classList.contains('flipped')) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+            }
+        });
+    </script>
+</body>
+</html>

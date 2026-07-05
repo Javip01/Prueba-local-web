@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Carta Completa | El Rincón de Sanabria Madrid</title>
+    <meta name="description" content="Explora la carta de El Rincón de Sanabria en Madrid. Deliciosas raciones clásicas, mariscos frescos de Huelva, carnes seleccionadas a la brasa y postres caseros tradicionales.">
+    <link rel="stylesheet" href="../style.css">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Menu",
+      "name": "Carta del Restaurante El Rincón de Sanabria",
+      "description": "Menú completo que incluye mariscos, embutidos ibéricos, verduras, pescados frescos, carnes premium y repostería artesanal."
+    }
+    </script>
+</head>
+<body>
+    <header class="top-nav">
+        <div class="logo-container"><img src="../images/logo.png" alt="Logotipo Oficial El Rincón de Sanabria"></div>
+        <nav class="nav-links">
+            <a href="../index.html">Inicio</a>
+            <a href="../menú especial/menu_especial.html">Menú<br>Especial</a>
+            <a href="../desayunos/desayunos.html">Desayunos</a>
+            <a href="carta.html" class="active">Carta</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1 class="text-center" style="font-size: 2.5rem; letter-spacing: 2px;">Nuestra Carta</h1>
+        
+        <section id="carta-container" style="padding-bottom: 80px;"></section>
+    </main>
+
+    <button class="ai-fab-floating" onclick="openWizard()" aria-label="Abrir recomendador de platos inteligente">
+        ✨ ¿No te decides? Sanabria AI te ayudará
+    </button>
+
+    <div class="modal-overlay" id="modal-plato" role="dialog" aria-modal="true">
+        <article class="modal-content">
+            <button class="modal-close" onclick="cerrarPlato()" aria-label="Cerrar ventana">×</button>
+            <img id="plato-img" class="dish-modal-img" src="" alt="Fotografía ampliada del plato seleccionado">
+            <div class="dish-modal-body">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom: 10px;">
+                    <h2 id="plato-titulo" style="margin:0; line-height: 1.2; font-size: 1.5rem; color: var(--accent-terracotta);"></h2>
+                    <span id="plato-precio" class="card-price" style="font-size: 1.4rem;"></span>
+                </div>
+                <p id="plato-desc" style="color:var(--text-muted); font-size:1.05rem; margin-bottom: 20px;"></p>
+                <p id="plato-ingredientes" style="font-size:0.95rem; color: var(--text-main); margin-bottom: 10px;"></p>
+                <div id="plato-alergenos" class="allergens-icons mt-2"></div>
+            </div>
+        </article>
+    </div>
+
+    <div class="modal-overlay" id="ia-modal" role="dialog" aria-modal="true">
+        <div class="modal-content wizard-content">
+            <button class="modal-close" onclick="closeWizard()" aria-label="Cerrar recomendador">×</button>
+            
+            <div class="wizard-step active" id="step-1">
+                <h2 class="text-center" style="font-size:1.4rem;">Filtro de Alergias</h2>
+                <div class="option-grid">
+                    <button class="option-btn btn-allergy" data-val="gluten">Gluten</button>
+                    <button class="option-btn btn-allergy" data-val="lactosa">Lactosa</button>
+                    <button class="option-btn btn-allergy" data-val="crustaceos">Crustáceos</button>
+                    <button class="option-btn btn-allergy" data-val="huevo">Huevo</button>
+                    <button class="option-btn btn-allergy" data-val="pescado">Pescado</button>
+                </div>
+                <button class="btn-primary mt-2" onclick="nextStep(2)">Siguiente Paso</button>
+            </div>
+
+            <div class="wizard-step" id="step-2">
+                <h2 class="text-center" style="font-size:1.4rem;">Ingredientes a evitar</h2>
+                <input type="text" id="tags-input" class="tags-input" placeholder="Ej. cebolla, ajo... (Pulsa coma o Enter)">
+                <div id="tags-container" style="min-height:40px"></div>
+                <div class="flex-row">
+                    <button class="btn-secondary" onclick="nextStep(1)">Atrás</button>
+                    <button class="btn-primary" onclick="nextStep(3)">Siguiente</button>
+                </div>
+            </div>
+
+            <div class="wizard-step" id="step-3">
+                <h2 class="text-center" style="font-size:1.4rem;">¿Qué te apetece hoy?</h2>
+                <div class="option-grid mt-2">
+                    <button class="option-btn" onclick="procesarFiltros('ligero')">🥗 Algo ligero</button>
+                    <button class="option-btn" onclick="procesarFiltros('tapeo')">🥘 Para compartir / Tapeo</button>
+                    <button class="option-btn" onclick="procesarFiltros('contundente')">🥩 Contundente</button>
+                    <button class="option-btn" onclick="procesarFiltros('dulce')">🍰 Dulce</button>
+                </div>
+                <button class="btn-secondary mt-2" onclick="nextStep(2)">Atrás</button>
+            </div>
+
+            <div class="wizard-step text-center" id="step-loading">
+                <h2 style="color:var(--accent-terracotta)">Procesando... 🤖</h2>
+                <p>Cruzando tus preferencias con nuestra cocina.</p>
+            </div>
+
+            <div class="wizard-step" id="step-results"></div>
+        </div>
+    </div>
+
+    <script src="carta.js"></script>
+</body>
+</html>
