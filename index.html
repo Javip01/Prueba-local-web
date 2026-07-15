@@ -13,9 +13,10 @@
         <div class="logo-container"><img src="images/logo.png" alt="Logotipo El Rincón de Sanabria"></div>
         <nav class="nav-links">
             <a href="index.html" class="active">Inicio</a>
-            <a href="menú especial/menu_especial.html">Menú<br>Especial</a>
-            <a href="desayunos/desayunos.html">Desayunos</a>
-            <a href="carta/carta.html">Carta</a>
+            <!-- NUEVOS ENLACES DE ANCLA Y PASARELA MENÚ -->
+            <a href="#horarios">Horario</a>
+            <a href="#instalaciones">Instalaciones</a>
+            <a href="menu/menu.html">Menú</a>
         </nav>
     </header>
 
@@ -39,7 +40,7 @@
                 <div class="carousel-text-container" style="pointer-events: auto;">
                     <h2>Menú Especial de la Casa</h2>
                     <p>Disfruta de nuestros mejores platos por 40€ con bebida y postre incluido.</p>
-                    <a href="carta/carta.html" class="btn-hero">Ver Carta</a>
+                    <a href="menu/menu.html" class="btn-hero">Ver Menús</a>
                 </div>
             </article>
 
@@ -54,11 +55,11 @@
         
         <div class="carousel-indicators" id="carouselIndicators"></div>
     </section>
-    <!-- ================= FIN CARRUSEL ================= -->
 
+    <!-- ================= HORARIOS E INSTALACIONES (NUEVOS IDS PARA EL MENÚ) ================= -->
     <main class="container" id="contacto-info">
         <section style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; text-align: left;">
-            <article class="card" style="padding: 20px; height: auto; min-height: auto;">
+            <article class="card" id="horarios" style="padding: 20px; height: auto; min-height: auto;">
                 <h3>🕒 Horarios</h3>
                 <p><strong>Lunes a Jueves:</strong> 12:00 - 23:30</p>
                 <p><strong>Viernes y Sábado:</strong> 12:00 - 01:00</p>
@@ -67,7 +68,7 @@
                 <p><em>Horario de Cocina:</em> 13:00-16:00 y 20:00-23:00</p>
             </article>
 
-            <article class="card" style="padding: 20px; height: auto; min-height: auto;">
+            <article class="card" id="instalaciones" style="padding: 20px; height: auto; min-height: auto;">
                 <h3>📍 Contacto e Instalaciones</h3>
                 <p><strong>Dirección:</strong> Calle Sillería 5, 28037 Madrid</p>
                 <p><strong>Teléfono:</strong> 91 775 90 90</p>
@@ -76,7 +77,7 @@
         </section>
     </main>
 
-    <!-- ================= SECCIÓN: SERVICIOS ================= -->
+    <!-- ================= SECCIONES INFERIORES ================= -->
     <section class="services-section">
         <h2 class="text-center category-title" style="border:none; margin-bottom:0;">Nuestros servicios</h2>
         <div class="services-grid">
@@ -93,7 +94,6 @@
         </div>
     </section>
 
-    <!-- ================= SECCIÓN: OPCIONES DE PAGO ================= -->
     <section class="payments-section">
         <h2>Opciones de pago</h2>
         <div class="payments-grid">
@@ -106,22 +106,12 @@
         </div>
     </section>
 
-    <!-- ================= FOOTER ================= -->
     <footer class="main-footer">
         <div class="footer-content">
             <address class="footer-contact" style="font-style: normal;">
-                <div class="contact-row">
-                    <i class="fa-solid fa-phone" aria-hidden="true"></i>
-                    <a href="tel:+34917759090">+34917759090</a>
-                </div>
-                <div class="contact-row">
-                    <i class="fa-regular fa-envelope" aria-hidden="true"></i>
-                    <a href="mailto:perlassanabria@gmail.com">perlassanabria@gmail.com</a>
-                </div>
-                <div class="contact-row">
-                    <i class="fa-solid fa-house" aria-hidden="true"></i>
-                    <span>C. Sillería, 5<br>28037 Madrid<br>España</span>
-                </div>
+                <div class="contact-row"><i class="fa-solid fa-phone" aria-hidden="true"></i><a href="tel:+34917759090">+34917759090</a></div>
+                <div class="contact-row"><i class="fa-regular fa-envelope" aria-hidden="true"></i><a href="mailto:perlassanabria@gmail.com">perlassanabria@gmail.com</a></div>
+                <div class="contact-row"><i class="fa-solid fa-house" aria-hidden="true"></i><span>C. Sillería, 5<br>28037 Madrid<br>España</span></div>
                 <a href="https://maps.google.com/?q=C.+Silleria,+5,+28037+Madrid" target="_blank" rel="noopener noreferrer" class="btn-mapa">MOSTRAR MAPA</a>
             </address>
 
@@ -141,12 +131,10 @@
         </div>
     </footer>
 
-    <!-- BOTONES FLOTANTES -->
     <button id="scrollActionBtn" class="scroll-action-btn" aria-label="Volver arriba">
         <div class="scroll-arrow"></div>
     </button>
 
-    <!-- SCRIPT AVANZADO: CARROUSEL Y SCROLL BTN -->
     <script>
         const track = document.getElementById('homeCarousel');
         const indicatorsContainer = document.getElementById('carouselIndicators');
@@ -200,29 +188,14 @@
                 track.scrollLeft += track.clientWidth;
             }, 5000);
         }
-        function resetAutoPlay() {
-            clearInterval(autoPlayTimer);
-            startAutoPlay();
-        }
+        function resetAutoPlay() { clearInterval(autoPlayTimer); startAutoPlay(); }
 
         startAutoPlay();
         track.addEventListener('touchstart', resetAutoPlay, {passive: true});
 
-        window.manualScrollPrev = function() {
-            resetAutoPlay();
-            track.style.scrollBehavior = 'smooth';
-            track.scrollLeft -= track.clientWidth;
-        }
-        window.manualScrollNext = function() {
-            resetAutoPlay();
-            track.style.scrollBehavior = 'smooth';
-            track.scrollLeft += track.clientWidth;
-        }
-        window.manualGoToSlide = function(index) {
-            resetAutoPlay();
-            track.style.scrollBehavior = 'smooth';
-            track.scrollLeft = index * track.clientWidth;
-        }
+        window.manualScrollPrev = function() { resetAutoPlay(); track.style.scrollBehavior = 'smooth'; track.scrollLeft -= track.clientWidth; }
+        window.manualScrollNext = function() { resetAutoPlay(); track.style.scrollBehavior = 'smooth'; track.scrollLeft += track.clientWidth; }
+        window.manualGoToSlide = function(index) { resetAutoPlay(); track.style.scrollBehavior = 'smooth'; track.scrollLeft = index * track.clientWidth; }
 
         const scrollBtn = document.getElementById('scrollActionBtn');
         window.addEventListener('scroll', () => {
