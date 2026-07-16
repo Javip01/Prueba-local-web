@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio | El Rincón de Sanabria Madrid</title>
-    <meta name="description" content="Restaurante en Madrid especializado en tradición, producto de primera calidad y raciones caseras. Reserva tu mesa hoy.">
+    <meta name="description" content="Restaurante en Madrid especializado en tradición, producto de primera calidad y raciones caseras. Realiza tu reserva online de mesa o local completo.">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -13,17 +13,15 @@
         <div class="logo-container"><img src="images/logo.png" alt="Logotipo El Rincón de Sanabria"></div>
         <nav class="nav-links">
             <a href="index.html" class="active">Inicio</a>
-            <!-- NUEVOS ENLACES DE ANCLA Y PASARELA MENÚ -->
             <a href="#horarios">Horario</a>
-            <a href="#instalaciones">Instalaciones</a>
+            <a href="reservas/reservas.html">Reservas</a>
             <a href="menu/menu.html">Menú</a>
         </nav>
     </header>
 
-    <!-- ================= CARRUSEL ================= -->
     <section class="carousel-wrapper" aria-label="Galería de inicio">
-        <button class="carousel-btn carousel-prev" onclick="manualScrollPrev()" aria-label="Anterior">&#10094;</button>
-        <button class="carousel-btn carousel-next" onclick="manualScrollNext()" aria-label="Siguiente">&#10095;</button>
+        <button class="carousel-btn carousel-prev" onclick="manualScrollPrev()" aria-label="Anterior">❮</button>
+        <button class="carousel-btn carousel-next" onclick="manualScrollNext()" aria-label="Siguiente">❯</button>
 
         <div class="carousel-track" id="homeCarousel">
             <article class="carousel-slide">
@@ -31,7 +29,7 @@
                 <div class="carousel-text-container" style="pointer-events: auto;">
                     <h1>Bienvenidos a El Rincón de Sanabria</h1>
                     <p>Tradición, producto de primera calidad y vanguardia en el corazón de Madrid.</p>
-                    <a href="#contacto-info" class="btn-hero">Reservar Mesa</a>
+                    <a href="reservas/reservas.html" class="btn-hero">Reservar Mesa</a>
                 </div>
             </article>
 
@@ -56,8 +54,7 @@
         <div class="carousel-indicators" id="carouselIndicators"></div>
     </section>
 
-    <!-- ================= HORARIOS E INSTALACIONES (NUEVOS IDS PARA EL MENÚ) ================= -->
-    <main class="container" id="contacto-info">
+    <main class="container">
         <section style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; text-align: left;">
             <article class="card" id="horarios" style="padding: 20px; height: auto; min-height: auto;">
                 <h3>🕒 Horarios</h3>
@@ -68,7 +65,7 @@
                 <p><em>Horario de Cocina:</em> 13:00-16:00 y 20:00-23:00</p>
             </article>
 
-            <article class="card" id="instalaciones" style="padding: 20px; height: auto; min-height: auto;">
+            <article class="card" style="padding: 20px; height: auto; min-height: auto;">
                 <h3>📍 Contacto e Instalaciones</h3>
                 <p><strong>Dirección:</strong> Calle Sillería 5, 28037 Madrid</p>
                 <p><strong>Teléfono:</strong> 91 775 90 90</p>
@@ -77,7 +74,6 @@
         </section>
     </main>
 
-    <!-- ================= SECCIONES INFERIORES ================= -->
     <section class="services-section">
         <h2 class="text-center category-title" style="border:none; margin-bottom:0;">Nuestros servicios</h2>
         <div class="services-grid">
@@ -114,13 +110,11 @@
                 <div class="contact-row"><i class="fa-solid fa-house" aria-hidden="true"></i><span>C. Sillería, 5<br>28037 Madrid<br>España</span></div>
                 <a href="https://maps.google.com/?q=C.+Silleria,+5,+28037+Madrid" target="_blank" rel="noopener noreferrer" class="btn-mapa">MOSTRAR MAPA</a>
             </address>
-
             <div class="footer-message">
                 <h3>Envíenos su mensaje</h3>
                 <a href="mailto:perlassanabria@gmail.com" class="btn-mapa">CONTACTE CON NOSOTROS</a>
             </div>
         </div>
-
         <div class="footer-bottom">
             <span>Diseñado por DISH Digital Solutions GmbH. Todos los derechos reservados.</span>
             <nav class="footer-links" aria-label="Enlaces legales">
@@ -131,9 +125,7 @@
         </div>
     </footer>
 
-    <button id="scrollActionBtn" class="scroll-action-btn" aria-label="Volver arriba">
-        <div class="scroll-arrow"></div>
-    </button>
+    <button id="scrollActionBtn" class="scroll-action-btn" aria-label="Volver arriba"><div class="scroll-arrow"></div></button>
 
     <script>
         const track = document.getElementById('homeCarousel');
@@ -189,7 +181,6 @@
             }, 5000);
         }
         function resetAutoPlay() { clearInterval(autoPlayTimer); startAutoPlay(); }
-
         startAutoPlay();
         track.addEventListener('touchstart', resetAutoPlay, {passive: true});
 
